@@ -1,0 +1,2 @@
+fitness,dg_bus_zero_based,dg_bus_number,dg_mw,evcs_bus_zero_based,evcs_bus_number,evcs_mw,bess_bus_zero_based,bess_bus_number,bess_discharge_mw,active_losses_mw,voltage_deviation_pu2,min_voltage_pu,max_voltage_pu,voltage_violation_sum,converged
+149.76605973493935,14,15,0.8,18,19,0.3,7,8,0.5,0.17957119535947516,0.06955808412108952,0.9186221822755348,1.0,0.148890907698369,True
