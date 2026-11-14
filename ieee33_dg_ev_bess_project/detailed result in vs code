@@ -1,0 +1,173 @@
+chech 127th line of this file 
+PS C:\Users\Likhitha R\Downloads\exams\gate\ieee33_dg_ev_bess_project> python -m pip install -r .\python\requirements.txt
+Requirement already satisfied: pandapower>=2.14 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from -r .\python\requirements.txt (line 1)) (3.5.6)
+Requirement already satisfied: numpy>=1.24 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from -r .\python\requirements.txt (line 2)) (2.4.6)
+Requirement already satisfied: pandas>=2.0 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from -r .\python\requirements.txt (line 3)) (2.3.3)
+Requirement already satisfied: matplotlib>=3.7 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from -r .\python\requirements.txt (line 4)) (3.11.1)
+Requirement already satisfied: networkx~=3.6 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pandapower>=2.14->-r .\python\requirements.txt (line 1)) (3.6.1)
+Requirement already satisfied: scipy>=1.15 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pandapower>=2.14->-r .\python\requirements.txt (line 1)) (1.17.1)
+Requirement already satisfied: packaging~=26.0 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pandapower>=2.14->-r .\python\requirements.txt (line 1)) (26.3)
+Requirement already satisfied: tqdm~=4.68 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pandapower>=2.14->-r .\python\requirements.txt (line 1)) (4.70.1)
+Requirement already satisfied: colorama==0.4.6 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pandapower>=2.14->-r .\python\requirements.txt (line 1)) (0.4.6)
+Requirement already satisfied: deepdiff~=9.1 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pandapower>=2.14->-r .\python\requirements.txt (line 1)) (9.1.0)
+Requirement already satisfied: geojson~=3.3 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pandapower>=2.14->-r .\python\requirements.txt (line 1)) (3.3.0)
+Requirement already satisfied: typing_extensions~=4.16 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pandapower>=2.14->-r .\python\requirements.txt (line 1)) (4.16.0)
+Requirement already satisfied: pandera~=0.32 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pandapower>=2.14->-r .\python\requirements.txt (line 1)) (0.36.0)
+Requirement already satisfied: python-dateutil>=2.8.2 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pandas>=2.0->-r .\python\requirements.txt (line 3)) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pandas>=2.0->-r .\python\requirements.txt (line 3)) (2026.6)
+Requirement already satisfied: tzdata>=2022.7 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pandas>=2.0->-r .\python\requirements.txt (line 3)) (2026.3)
+Requirement already satisfied: contourpy>=1.0.1 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from matplotlib>=3.7->-r .\python\requirements.txt (line 4)) (1.3.3)
+Requirement already satisfied: cycler>=0.10 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from matplotlib>=3.7->-r .\python\requirements.txt (line 4)) (0.12.1)
+Requirement already satisfied: fonttools>=4.28.2 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from matplotlib>=3.7->-r .\python\requirements.txt (line 4)) (4.63.0)
+Requirement already satisfied: kiwisolver>=1.3.1 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from matplotlib>=3.7->-r .\python\requirements.txt (line 4)) (1.5.0)
+Requirement already satisfied: pillow>=9 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from matplotlib>=3.7->-r .\python\requirements.txt (line 4)) (12.3.0)
+Requirement already satisfied: pyparsing>=3 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from matplotlib>=3.7->-r .\python\requirements.txt (line 4)) (3.3.2)
+Requirement already satisfied: cachebox<6,>=5.2 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from deepdiff~=9.1->pandapower>=2.14->-r .\python\requirements.txt (line 1)) (5.2.3)
+Requirement already satisfied: orderly-set<6,>=5.5.0 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from deepdiff~=9.1->pandapower>=2.14->-r .\python\requirements.txt (line 1)) (5.5.0)
+Requirement already satisfied: pydantic in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pandera~=0.32->pandapower>=2.14->-r .\python\requirements.txt (line 1)) (2.14.3)
+Requirement already satisfied: typeguard in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pandera~=0.32->pandapower>=2.14->-r .\python\requirements.txt (line 1)) (4.6.0)
+Requirement already satisfied: typing_inspect>=0.6.0 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pandera~=0.32->pandapower>=2.14->-r .\python\requirements.txt (line 1)) (0.9.0)
+Requirement already satisfied: six>=1.5 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from python-dateutil>=2.8.2->pandas>=2.0->-r .\python\requirements.txt (line 3)) (1.17.0)
+Requirement already satisfied: mypy-extensions>=0.3.0 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from typing_inspect>=0.6.0->pandera~=0.32->pandapower>=2.14->-r .\python\requirements.txt (line 1)) (1.2.0)
+Requirement already satisfied: annotated-types>=0.6.0 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pydantic->pandera~=0.32->pandapower>=2.14->-r .\python\requirements.txt (line 1)) (0.8.0)
+Requirement already satisfied: pydantic-core==2.50.4 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pydantic->pandera~=0.32->pandapower>=2.14->-r .\python\requirements.txt (line 1)) (2.50.4)
+Requirement already satisfied: typing-inspection>=0.4.4 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from pydantic->pandera~=0.32->pandapower>=2.14->-r .\python\requirements.txt (line 1)) (0.4.5)
+
+[notice] A new release of pip is available: 24.0 -> 26.3
+[notice] To update, run: C:\Users\Likhitha R\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m pip install --upgrade pip
+PS C:\Users\Likhitha R\Downloads\exams\gate\ieee33_dg_ev_bess_project> python .\python\01_baseline.py
+     case  min_voltage_pu  min_voltage_bus  max_voltage_pu  max_voltage_bus  active_losses_mw  voltage_deviation_pu2  converged
+100% load        0.913090               17             1.0                0          0.202677               0.117094       True
+110% load        0.903560               17             1.0                0          0.249182               0.144097       True
+120% load        0.893842               17             1.0                0          0.301454               0.174494       True
+130% load        0.883925               17             1.0                0          0.359824               0.208488       True
+
+Lowest-voltage buses in base case:
+ bus_index_zero_based  bus_number_one_based  voltage_pu
+                   17                    18    0.913090
+                   16                    17    0.913698
+                   15                    16    0.915725
+                   32                    33    0.916590
+                   31                    32    0.916873
+                   14                    15    0.917093
+                   30                    31    0.917789
+                   13                    14    0.918505
+                   12                    13    0.920772
+                   29                    30    0.921950
+
+Results saved in: C:\Users\Likhitha R\Downloads\exams\gate\ieee33_dg_ev_bess_project\results
+PS C:\Users\Likhitha R\Downloads\exams\gate\ieee33_dg_ev_bess_project> python -m pip install numba    
+Requirement already satisfied: numba in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (0.68.1)
+Requirement already satisfied: llvmlite<0.51,>=0.50.0dev0 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from numba) (0.50.0)
+Requirement already satisfied: numpy<2.6,>=1.22 in c:\users\likhitha r\appdata\local\packages\pythonsoftwarefoundation.python.3.11_qbz5n2kfra8p0\localcache\local-packages\python311\site-packages (from numba) (2.4.6)
+
+[notice] A new release of pip is available: 24.0 -> 26.3
+[notice] To update, run: C:\Users\Likhitha R\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\python.exe -m pip install --upgrade pip
+PS C:\Users\Likhitha R\Downloads\exams\gate\ieee33_dg_ev_bess_project> python .\python\03_pso_optimization.py
+Iteration 01/35: best fitness = 360.04615918
+Iteration 02/35: best fitness = 310.60240874
+Iteration 03/35: best fitness = 208.23067161
+Iteration 04/35: best fitness = 154.50668956
+Iteration 05/35: best fitness = 154.50668956
+Iteration 06/35: best fitness = 149.93893346
+Iteration 07/35: best fitness = 149.93893346
+Iteration 08/35: best fitness = 149.93893346
+Iteration 09/35: best fitness = 149.93893346
+Iteration 10/35: best fitness = 149.91781435
+Iteration 11/35: best fitness = 149.76605973
+Iteration 12/35: best fitness = 149.76605973
+Iteration 13/35: best fitness = 149.76605973
+Iteration 14/35: best fitness = 149.76605973
+Iteration 15/35: best fitness = 149.76605973
+Iteration 16/35: best fitness = 149.76605973
+Iteration 17/35: best fitness = 149.76605973
+Iteration 18/35: best fitness = 149.76605973
+Iteration 19/35: best fitness = 149.76605973
+Iteration 20/35: best fitness = 149.76605973
+Iteration 21/35: best fitness = 149.76605973
+Iteration 22/35: best fitness = 149.76605973
+Iteration 23/35: best fitness = 149.76605973
+Iteration 24/35: best fitness = 149.76605973
+Iteration 25/35: best fitness = 149.76605973
+Iteration 26/35: best fitness = 149.76605973
+Iteration 27/35: best fitness = 149.76605973
+Iteration 28/35: best fitness = 149.76605973
+Iteration 29/35: best fitness = 149.76605973
+Iteration 30/35: best fitness = 149.76605973
+Iteration 31/35: best fitness = 149.76605973
+Iteration 32/35: best fitness = 149.76605973
+Iteration 33/35: best fitness = 149.76605973
+Iteration 34/35: best fitness = 149.76605973
+Iteration 35/35: best fitness = 149.76605973
+
+Best decision vector: [13.73145439  0.8        18.39500466  7.33140555  0.5       ]
+Best solution:
+  fitness: 149.76605973493935
+  dg_bus_zero_based: 14
+  dg_bus_number: 15
+  dg_mw: 0.8
+  evcs_bus_zero_based: 18
+  evcs_bus_number: 19
+  evcs_mw: 0.3
+  bess_bus_zero_based: 7
+  bess_bus_number: 8
+  bess_discharge_mw: 0.5
+  active_losses_mw: 0.17957119535947516
+  voltage_deviation_pu2: 0.06955808412108952
+  min_voltage_pu: 0.9186221822755348
+  max_voltage_pu: 1.0
+  voltage_violation_sum: 0.148890907698369
+  converged: True
+
+Results saved in: C:\Users\Likhitha R\Downloads\exams\gate\ieee33_dg_ev_bess_project\results
+PS C:\Users\Likhitha R\Downloads\exams\gate\ieee33_dg_ev_bess_project> 
+PS C:\Users\Likhitha R\Downloads\exams\gate\ieee33_dg_ev_bess_project> 
+
+
+⬇️
+overall simplified results 
+1. Baseline Load Flow Analysis
+The baseline load flow simulation was executed successfully using 01_baseline.py on the IEEE 33-bus distribution system under four loading conditions.
+Loading condition	Minimum voltage (p.u.)	Weakest bus	Maximum voltage (p.u.)	Active power losses (MW)	Voltage deviation (p.u.²)	Convergence
+100%	0.913090	18	1.000000	0.202677	0.117094	Yes
+110%	0.903560	18	1.000000	0.249182	0.144097	Yes
+120%	0.893842	18	1.000000	0.301454	0.174494	Yes
+130%	0.883925	18	1.000000	0.359824	0.208488	Yes
+
+Observation: Bus 18 recorded the lowest voltage under the base load condition, at 0.913090 p.u. As the loading increased from 100% to 130%, the minimum voltage decreased and active power losses increased. All four load flow simulations converged successfully.
+2. PSO Optimization
+The Particle Swarm Optimization (PSO) simulation was executed successfully using 03_pso_optimization.py. The algorithm completed 35 iterations to identify suitable locations and capacities for DG, EVCS and BESS.
+
+PSO iteration results
+Iteration	Best fitness value
+1	360.04615918
+2	310.60240874
+3	208.23067161
+4	154.50668956
+5	154.50668956
+6	149.93893346
+7	149.93893346
+8	149.93893346
+9	149.93893346
+10	149.91781435
+11	149.76605973
+12–35	149.76605973
+
+Observation: The best fitness value decreased from 360.04615918 in the first iteration to 149.76605973 in the eleventh iteration. It remained constant from iteration 11 to iteration 35, indicating that no better solution was found during the remaining iterations.
+
+Best optimization results
+Parameter	Optimized value
+DG location	Bus 15
+DG capacity	0.8 MW
+EVCS location	Bus 19
+EVCS demand	0.3 MW
+BESS location	Bus 8
+BESS discharge power	0.5 MW
+Active power losses	0.179571 MW
+Voltage deviation	0.069558 p.u.²
+Minimum voltage	0.918622 p.u.
+Maximum voltage	1.000000 p.u.
+Best fitness value	149.76605973
+Load flow convergence	Yes
+
+Observation: The optimized solution identified Bus 15 for DG, Bus 19 for EVCS and Bus 8 for BESS. The resulting active power losses were 0.179571 MW. However, the minimum voltage remained below the recommended lower limit of 0.95 p.u., indicating that further improvement in voltage regulation and optimization constraints is required.
