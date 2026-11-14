@@ -7,7 +7,7 @@ Decision variables:
   x[2] = EVCS bus index (rounded to an eligible bus)
   x[3] = BESS bus index (rounded to an eligible bus)
   x[4] = BESS discharge power (MW)
-
+ 
 EVCS charging power is fixed so the optimizer cannot reduce the EV demand to zero.
 This starter optimizes a single steady-state operating point. It does not yet
 optimize DSTATCOM, V2G, switching configuration, queueing, SOC over time, or VSI.
