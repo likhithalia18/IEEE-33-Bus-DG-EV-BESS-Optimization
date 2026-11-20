@@ -1,0 +1,619 @@
+1. PSO optimization settings
+Parameter	Value
+Optimization algorithm	Particle Swarm Optimization (PSO)
+Number of particles	40
+Number of iterations	80
+Number of independent seeds	5
+Seed values	7, 17, 27, 37, 47
+Total particle-iterations	3,200 per seed
+Total across 5 seeds	16,000 particle-iterations
+Best fitness value	184.232714
+Power-flow convergence	Successful
+
+2. Best optimized placement
+The PSO algorithm selected the following locations and capacities:
+Component	Bus number	Capacity
+Distributed Generation (DG)	14	0.8 MW
+EV Charging Station (EVCS)	2	0.3 MW
+Battery Energy Storage System (BESS)	18	0.5 MW discharge
+
+3. Best optimization results
+Converged successfully
+Performance parameter	Optimized value
+Active power losses	0.206633 MW
+Voltage deviation	0.079418 pu²
+Minimum VSI	0.699530
+Minimum voltage	0.913855 pu
+Maximum voltage	1.000000 pu
+Maximum line-loading violation	0
+Placement constraint violation	False
+
+4. Results across five seeds
+The algorithm was executed five times to check the consistency of the optimization.
+Metric	Mean	Standard deviation
+Fitness	184.507520	0.250862
+Active losses (MW)	0.207398	0.000699
+Voltage deviation (pu²)	0.079334	0.000076
+Minimum VSI	0.699482	0.000044
+Minimum voltage (pu)	0.913839	0.000015
+
+5. Comparison of uncompensated and optimized system
+Load condition	Uncompensated losses (MW)	PSO losses (MW)	Loss reduction
+100% load	0.263358	0.137039	64.77%
+120% load	0.389027	0.206633	46.88%
+130% load	0.463676	0.250238	35.68%
+
+The optimized system also improves minimum voltage and voltage stability under all three load conditions.
+6. Additional analysis: 24-hour QSTS
+A 24-hour Quasi-Static Time-Series (QSTS) analysis was also performed.
+- Simulation period: 24 hours.
+- Time interval: 1 hour.
+- Total time steps: 24.
+- PV location: Bus 14.
+- EVCS location: Bus 2.
+- BESS location: Bus 18.
+- Monitored parameters: PV output, EV demand, BESS charging/discharging, battery SOC, minimum voltage, active losses, VSI and line loading.
+7. Overall conclusion
+The PSO algorithm successfully identified suitable locations and capacities for DG, EVCS and BESS in the modified IEEE 33-bus distribution network. The results show reduced active power losses, improved voltage profile and better voltage stability compared with the uncompensated system. Five independent PSO runs were completed using 40 particles and 80 iterations, and the small variation in results demonstrates good optimization consistency.
+
+
+
+-----------------------------------------------------------------------------this is vs code's result----------------------------------------------------------------------------------------
+
+
+PS C:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED> & "C:/Users/Likhitha R/AppData/Local/Microsoft/WindowsApps/python3.11.exe" "c:/Users/Likhitha R/Downloads/IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED/IEEE-33-Bus-DG-EV-BESS-Optimization-main/ieee33_dg_ev_bess_project/python/01_baseline.py"
+     case  min_voltage_pu  min_voltage_bus  max_voltage_pu  max_voltage_bus  active_losses_mw  voltage_deviation_pu2  minimum_vsi  converged
+100% load        0.891390               18             1.0                1          0.244374               0.149698     0.642544       True
+110% load        0.879195               18             1.0                1          0.301393               0.184871     0.609490       True
+120% load        0.866687               18             1.0                1          0.365849               0.224715     0.576932       True
+130% load        0.853838               18             1.0                1          0.438272               0.269583     0.544871       True
+
+Lowest-voltage buses in base case:
+ bus_index_zero_based  bus_number_one_based  voltage_pu
+                   17                    18    0.891390
+                   16                    17    0.893358
+                   15                    16    0.898207
+                   14                    15    0.900957
+                   13                    14    0.903525
+                   12                    13    0.907002
+                   32                    33    0.912257
+                   31                    32    0.912542
+                   30                    31    0.913462
+                   11                    12    0.915945
+
+Results saved in: C:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED\IEEE-33-Bus-DG-EV-BESS-Optimization-main\ieee33_dg_ev_bess_project\results
+PS C:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED> ^C
+PS C:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED> 
+PS C:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED> & "C:/Users/Likhitha R/AppData/Local/Microsoft/WindowsApps/python3.11.exe" "c:/Users/Likhitha R/Downloads/IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED/IEEE-33-Bus-DG-EV-BESS-Optimization-main/ieee33_dg_ev_bess_project/python/01_baseline.py"
+Traceback (most recent call last):
+  File "c:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED\IEEE-33-Bus-DG-EV-BESS-Optimization-main\ieee33_dg_ev_bess_project\python\01_baseline.py", line 3, in <module>
+    from common import make_network, run_loadflow, scale_loads, result_summary, save_voltage_plot, save_bar_plot, OUT
+  File "c:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED\IEEE-33-Bus-DG-EV-BESS-Optimization-main\ieee33_dg_ev_bess_project\python\common.py", line 5, in <module>
+    import pandapower as pp
+  File "C:\Users\Likhitha R\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandapower\__init__.py", line 9, in <module>
+    from pandapower.convert_format import *
+  File "C:\Users\Likhitha R\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandapower\convert_format.py", line 15, in <module>
+    from pandapower.control import TrafoController, BinarySearchControl, DroopControl
+  File "C:\Users\Likhitha R\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandapower\control\__init__.py", line 1, in <module>
+    import pandapower.control.basic_controller
+  File "C:\Users\Likhitha R\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandapower\control\basic_controller.py", line 9, in <module>
+    from pandapower.control.util.auxiliary import \
+  File "C:\Users\Likhitha R\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandapower\control\util\auxiliary.py", line 15, in <module>
+    from pandapower.control.util.characteristic import SplineCharacteristic, Characteristic
+  File "C:\Users\Likhitha R\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\pandapower\control\util\characteristic.py", line 8, in <module>
+    from scipy.interpolate import interp1d, PchipInterpolator
+  File "C:\Users\Likhitha R\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\scipy\interpolate\__init__.py", line 195, in <module>
+    from ._fitpack2 import *
+  File "C:\Users\Likhitha R\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\scipy\interpolate\_fitpack2.py", line 2173, in <module>
+    @xp_capabilities(out_of_scope=True)
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Likhitha R\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\scipy\_lib\_array_api.py", line 847, in decorator
+    doc = str(doc).split("\n", 1)[1].lstrip(" \n")  # remove signature
+          ^^^^^^^^
+  File "C:\Users\Likhitha R\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\scipy\_lib\_docscrape.py", line 611, in __str__
+    out += super().__str__(func_role=self._role)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Likhitha R\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\scipy\_lib\_docscrape.py", line 570, in __str__
+    return "\n".join(out)
+           ^^^^^^^^^^^^^^
+KeyboardInterrupt
+PS C:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED> & "C:/Users/Likhitha R/AppData/Local/Microsoft/WindowsApps/python3.11.exe" "c:/Users/Likhitha R/Downloads/IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED/IEEE-33-Bus-DG-EV-BESS-Optimization-main/ieee33_dg_ev_bess_project/python/01_baseline.py"
+     case  min_voltage_pu  min_voltage_bus  max_voltage_pu  max_voltage_bus  active_losses_mw  voltage_deviation_pu2  minimum_vsi  converged
+100% load        0.891390               18             1.0                1          0.244374               0.149698     0.642544       True
+110% load        0.879195               18             1.0                1          0.301393               0.184871     0.609490       True
+120% load        0.866687               18             1.0                1          0.365849               0.224715     0.576932       True
+130% load        0.853838               18             1.0                1          0.438272               0.269583     0.544871       True
+
+Lowest-voltage buses in base case:
+ bus_index_zero_based  bus_number_one_based  voltage_pu
+                   17                    18    0.891390
+                   16                    17    0.893358
+                   15                    16    0.898207
+                   14                    15    0.900957
+                   13                    14    0.903525
+                   12                    13    0.907002
+                   32                    33    0.912257
+                   31                    32    0.912542
+                   30                    31    0.913462
+                   11                    12    0.915945
+
+Results saved in: C:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED\IEEE-33-Bus-DG-EV-BESS-Optimization-main\ieee33_dg_ev_bess_project\results
+PS C:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED> & "C:/Users/Likhitha R/AppData/Local/Microsoft/WindowsApps/python3.11.exe" "c:/Users/Likhitha R/Downloads/IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED/IEEE-33-Bus-DG-EV-BESS-Optimization-main/ieee33_dg_ev_bess_project/python/02_resource_scenarios.py"
+Traceback (most recent call last):
+  File "c:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED\IEEE-33-Bus-DG-EV-BESS-Optimization-main\ieee33_dg_ev_bess_project\python\02_resource_scenarios.py", line 257, in <module>
+    main()
+  File "c:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED\IEEE-33-Bus-DG-EV-BESS-Optimization-main\ieee33_dg_ev_bess_project\python\02_resource_scenarios.py", line 190, in main
+    pso = load_pso_solution()
+          ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED\IEEE-33-Bus-DG-EV-BESS-Optimization-main\ieee33_dg_ev_bess_project\python\02_resource_scenarios.py", line 40, in load_pso_solution
+    raise FileNotFoundError(
+FileNotFoundError: pso_best_solution.csv not found. Run 03_pso_optimization.py before 02_resource_scenarios.py so the optimized placement is evaluated.
+PS C:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED> python ".\IEEE-33-Bus-DG-EV-BESS-Optimization-main\ieee33_dg_ev_bess_project\python\03_pso_optimization.py"
+Seed 7 | Iteration 01/80: best fitness = 405.40997725
+Seed 7 | Iteration 02/80: best fitness = 264.14740523
+Seed 7 | Iteration 03/80: best fitness = 198.98979863
+Seed 7 | Iteration 04/80: best fitness = 184.75174736
+Seed 7 | Iteration 05/80: best fitness = 184.75174736
+Seed 7 | Iteration 06/80: best fitness = 184.75174736
+Seed 7 | Iteration 07/80: best fitness = 184.73248092
+Seed 7 | Iteration 08/80: best fitness = 184.73248092
+Seed 7 | Iteration 09/80: best fitness = 184.69561199
+Seed 7 | Iteration 10/80: best fitness = 184.69561199
+Seed 7 | Iteration 11/80: best fitness = 184.69561199
+Seed 7 | Iteration 12/80: best fitness = 184.69561199
+Seed 7 | Iteration 13/80: best fitness = 184.69561199
+Seed 7 | Iteration 14/80: best fitness = 184.69561199
+Seed 7 | Iteration 15/80: best fitness = 184.69561199
+Seed 7 | Iteration 16/80: best fitness = 184.69561199
+Seed 7 | Iteration 17/80: best fitness = 184.69561199
+Seed 7 | Iteration 18/80: best fitness = 184.69561199
+Seed 7 | Iteration 19/80: best fitness = 184.69561199
+Seed 7 | Iteration 20/80: best fitness = 184.69561199
+Seed 7 | Iteration 21/80: best fitness = 184.69561199
+Seed 7 | Iteration 22/80: best fitness = 184.69561199
+Seed 7 | Iteration 23/80: best fitness = 184.69561199
+Seed 7 | Iteration 24/80: best fitness = 184.69561199
+Seed 7 | Iteration 25/80: best fitness = 184.69561199
+Seed 7 | Iteration 26/80: best fitness = 184.69561199
+Seed 7 | Iteration 27/80: best fitness = 184.69561199
+Seed 7 | Iteration 28/80: best fitness = 184.69561199
+Seed 7 | Iteration 29/80: best fitness = 184.69561199
+Seed 7 | Iteration 30/80: best fitness = 184.69561199
+Seed 7 | Iteration 31/80: best fitness = 184.69561199
+Seed 7 | Iteration 32/80: best fitness = 184.69561199
+Seed 7 | Iteration 33/80: best fitness = 184.69561199
+Seed 7 | Iteration 34/80: best fitness = 184.69561199
+Seed 7 | Iteration 35/80: best fitness = 184.69561199
+Seed 7 | Iteration 36/80: best fitness = 184.69561199
+Seed 7 | Iteration 37/80: best fitness = 184.69561199
+Seed 7 | Iteration 38/80: best fitness = 184.69561199
+Seed 7 | Iteration 39/80: best fitness = 184.69561199
+Seed 7 | Iteration 40/80: best fitness = 184.69561199
+Seed 7 | Iteration 41/80: best fitness = 184.69561199
+Seed 7 | Iteration 42/80: best fitness = 184.69072318
+Seed 7 | Iteration 43/80: best fitness = 184.69072318
+Seed 7 | Iteration 44/80: best fitness = 184.69072318
+Seed 7 | Iteration 45/80: best fitness = 184.69072318
+Seed 7 | Iteration 46/80: best fitness = 184.69072318
+Seed 7 | Iteration 47/80: best fitness = 184.69072318
+Seed 7 | Iteration 48/80: best fitness = 184.69072318
+Seed 7 | Iteration 49/80: best fitness = 184.69072318
+Seed 7 | Iteration 50/80: best fitness = 184.69072318
+Seed 7 | Iteration 51/80: best fitness = 184.69072318
+Seed 7 | Iteration 52/80: best fitness = 184.69072318
+Seed 7 | Iteration 53/80: best fitness = 184.69072318
+Seed 7 | Iteration 54/80: best fitness = 184.69072318
+Seed 7 | Iteration 55/80: best fitness = 184.69072318
+Seed 7 | Iteration 56/80: best fitness = 184.69072318
+Seed 7 | Iteration 57/80: best fitness = 184.69072318
+Seed 7 | Iteration 58/80: best fitness = 184.69072318
+Seed 7 | Iteration 59/80: best fitness = 184.69072318
+Seed 7 | Iteration 60/80: best fitness = 184.69072318
+Seed 7 | Iteration 61/80: best fitness = 184.69072318
+Seed 7 | Iteration 62/80: best fitness = 184.69072318
+Seed 7 | Iteration 63/80: best fitness = 184.69072318
+Seed 7 | Iteration 64/80: best fitness = 184.69072318
+Seed 7 | Iteration 65/80: best fitness = 184.69072318
+Seed 7 | Iteration 66/80: best fitness = 184.69072318
+Seed 7 | Iteration 67/80: best fitness = 184.69072318
+Seed 7 | Iteration 68/80: best fitness = 184.69072318
+Seed 7 | Iteration 69/80: best fitness = 184.69072318
+Seed 7 | Iteration 70/80: best fitness = 184.69072318
+Seed 7 | Iteration 71/80: best fitness = 184.69072318
+Seed 7 | Iteration 72/80: best fitness = 184.69072318
+Seed 7 | Iteration 73/80: best fitness = 184.69072318
+Seed 7 | Iteration 74/80: best fitness = 184.69072318
+Seed 7 | Iteration 75/80: best fitness = 184.69072318
+Seed 7 | Iteration 76/80: best fitness = 184.69072318
+Seed 7 | Iteration 77/80: best fitness = 184.69072318
+Seed 7 | Iteration 78/80: best fitness = 184.69072318
+Seed 7 | Iteration 79/80: best fitness = 184.69072318
+Seed 7 | Iteration 80/80: best fitness = 184.69072318
+Seed 17 | Iteration 01/80: best fitness = 372.23364080
+Seed 17 | Iteration 02/80: best fitness = 332.02935789
+Seed 17 | Iteration 03/80: best fitness = 227.94431434
+Seed 17 | Iteration 04/80: best fitness = 227.94431434
+Seed 17 | Iteration 05/80: best fitness = 201.24254002
+Seed 17 | Iteration 06/80: best fitness = 186.49781253
+Seed 17 | Iteration 07/80: best fitness = 186.15034419
+Seed 17 | Iteration 08/80: best fitness = 184.69561199
+Seed 17 | Iteration 09/80: best fitness = 184.69561199
+Seed 17 | Iteration 10/80: best fitness = 184.69561199
+Seed 17 | Iteration 11/80: best fitness = 184.69561199
+Seed 17 | Iteration 12/80: best fitness = 184.69561199
+Seed 17 | Iteration 13/80: best fitness = 184.69561199
+Seed 17 | Iteration 14/80: best fitness = 184.69561199
+Seed 17 | Iteration 15/80: best fitness = 184.69561199
+Seed 17 | Iteration 16/80: best fitness = 184.69561199
+Seed 17 | Iteration 17/80: best fitness = 184.69561199
+Seed 17 | Iteration 18/80: best fitness = 184.69561199
+Seed 17 | Iteration 19/80: best fitness = 184.69561199
+Seed 17 | Iteration 20/80: best fitness = 184.69561199
+Seed 17 | Iteration 21/80: best fitness = 184.69561199
+Seed 17 | Iteration 22/80: best fitness = 184.69561199
+Seed 17 | Iteration 23/80: best fitness = 184.69561199
+Seed 17 | Iteration 24/80: best fitness = 184.69561199
+Seed 17 | Iteration 25/80: best fitness = 184.69561199
+Seed 17 | Iteration 26/80: best fitness = 184.69561199
+Seed 17 | Iteration 27/80: best fitness = 184.69561199
+Seed 17 | Iteration 28/80: best fitness = 184.69561199
+Seed 17 | Iteration 29/80: best fitness = 184.69561199
+Seed 17 | Iteration 30/80: best fitness = 184.69561199
+Seed 17 | Iteration 31/80: best fitness = 184.69561199
+Seed 17 | Iteration 32/80: best fitness = 184.69072318
+Seed 17 | Iteration 33/80: best fitness = 184.69072318
+Seed 17 | Iteration 34/80: best fitness = 184.69072318
+Seed 17 | Iteration 35/80: best fitness = 184.69072318
+Seed 17 | Iteration 36/80: best fitness = 184.69072318
+Seed 17 | Iteration 37/80: best fitness = 184.69072318
+Seed 17 | Iteration 38/80: best fitness = 184.69072318
+Seed 17 | Iteration 39/80: best fitness = 184.69072318
+Seed 17 | Iteration 40/80: best fitness = 184.69072318
+Seed 17 | Iteration 41/80: best fitness = 184.69072318
+Seed 17 | Iteration 42/80: best fitness = 184.69072318
+Seed 17 | Iteration 43/80: best fitness = 184.69072318
+Seed 17 | Iteration 44/80: best fitness = 184.69072318
+Seed 17 | Iteration 45/80: best fitness = 184.69072318
+Seed 17 | Iteration 46/80: best fitness = 184.69072318
+Seed 17 | Iteration 47/80: best fitness = 184.69072318
+Seed 17 | Iteration 48/80: best fitness = 184.69072318
+Seed 17 | Iteration 49/80: best fitness = 184.69072318
+Seed 17 | Iteration 50/80: best fitness = 184.69072318
+Seed 17 | Iteration 51/80: best fitness = 184.69072318
+Seed 17 | Iteration 52/80: best fitness = 184.69072318
+Seed 17 | Iteration 53/80: best fitness = 184.69072318
+Seed 17 | Iteration 54/80: best fitness = 184.69072318
+Seed 17 | Iteration 55/80: best fitness = 184.69072318
+Seed 17 | Iteration 56/80: best fitness = 184.69072318
+Seed 17 | Iteration 57/80: best fitness = 184.69072318
+Seed 17 | Iteration 58/80: best fitness = 184.69072318
+Seed 17 | Iteration 59/80: best fitness = 184.69072318
+Seed 17 | Iteration 60/80: best fitness = 184.69072318
+Seed 17 | Iteration 61/80: best fitness = 184.69072318
+Seed 17 | Iteration 62/80: best fitness = 184.69072318
+Seed 17 | Iteration 63/80: best fitness = 184.69072318
+Seed 17 | Iteration 64/80: best fitness = 184.69072318
+Seed 17 | Iteration 65/80: best fitness = 184.69072318
+Seed 17 | Iteration 66/80: best fitness = 184.69072318
+Seed 17 | Iteration 67/80: best fitness = 184.69072318
+Seed 17 | Iteration 68/80: best fitness = 184.69072318
+Seed 17 | Iteration 69/80: best fitness = 184.69072318
+Seed 17 | Iteration 70/80: best fitness = 184.69072318
+Seed 17 | Iteration 71/80: best fitness = 184.69072318
+Seed 17 | Iteration 72/80: best fitness = 184.69072318
+Seed 17 | Iteration 73/80: best fitness = 184.69072318
+Seed 17 | Iteration 74/80: best fitness = 184.69072318
+Seed 17 | Iteration 75/80: best fitness = 184.69072318
+Seed 17 | Iteration 76/80: best fitness = 184.69072318
+Seed 17 | Iteration 77/80: best fitness = 184.69072318
+Seed 17 | Iteration 78/80: best fitness = 184.69072318
+Seed 17 | Iteration 79/80: best fitness = 184.69072318
+Seed 17 | Iteration 80/80: best fitness = 184.69072318
+Seed 27 | Iteration 01/80: best fitness = 509.92833280
+Seed 27 | Iteration 02/80: best fitness = 231.62507301
+Seed 27 | Iteration 03/80: best fitness = 219.46228956
+Seed 27 | Iteration 04/80: best fitness = 191.81372830
+Seed 27 | Iteration 05/80: best fitness = 185.14184069
+Seed 27 | Iteration 06/80: best fitness = 185.14184069
+Seed 27 | Iteration 07/80: best fitness = 185.14184069
+Seed 27 | Iteration 08/80: best fitness = 185.14184069
+Seed 27 | Iteration 09/80: best fitness = 184.91502851
+Seed 27 | Iteration 10/80: best fitness = 184.75174736
+Seed 27 | Iteration 11/80: best fitness = 184.75174736
+Seed 27 | Iteration 12/80: best fitness = 184.74100492
+Seed 27 | Iteration 13/80: best fitness = 184.74100492
+Seed 27 | Iteration 14/80: best fitness = 184.73248092
+Seed 27 | Iteration 15/80: best fitness = 184.73248092
+Seed 27 | Iteration 16/80: best fitness = 184.73248092
+Seed 27 | Iteration 17/80: best fitness = 184.69561199
+Seed 27 | Iteration 18/80: best fitness = 184.69561199
+Seed 27 | Iteration 19/80: best fitness = 184.69561199
+Seed 27 | Iteration 20/80: best fitness = 184.69561199
+Seed 27 | Iteration 21/80: best fitness = 184.69561199
+Seed 27 | Iteration 22/80: best fitness = 184.69561199
+Seed 27 | Iteration 23/80: best fitness = 184.69561199
+Seed 27 | Iteration 24/80: best fitness = 184.69561199
+Seed 27 | Iteration 25/80: best fitness = 184.69561199
+Seed 27 | Iteration 26/80: best fitness = 184.69561199
+Seed 27 | Iteration 27/80: best fitness = 184.69561199
+Seed 27 | Iteration 28/80: best fitness = 184.69561199
+Seed 27 | Iteration 29/80: best fitness = 184.69561199
+Seed 27 | Iteration 30/80: best fitness = 184.69561199
+Seed 27 | Iteration 31/80: best fitness = 184.69561199
+Seed 27 | Iteration 32/80: best fitness = 184.69561199
+Seed 27 | Iteration 33/80: best fitness = 184.69072318
+Seed 27 | Iteration 34/80: best fitness = 184.69072318
+Seed 27 | Iteration 35/80: best fitness = 184.69072318
+Seed 27 | Iteration 36/80: best fitness = 184.69072318
+Seed 27 | Iteration 37/80: best fitness = 184.69072318
+Seed 27 | Iteration 38/80: best fitness = 184.69072318
+Seed 27 | Iteration 39/80: best fitness = 184.69072318
+Seed 27 | Iteration 40/80: best fitness = 184.69072318
+Seed 27 | Iteration 41/80: best fitness = 184.69072318
+Seed 27 | Iteration 42/80: best fitness = 184.69072318
+Seed 27 | Iteration 43/80: best fitness = 184.69072318
+Seed 27 | Iteration 44/80: best fitness = 184.69072318
+Seed 27 | Iteration 45/80: best fitness = 184.69072318
+Seed 27 | Iteration 46/80: best fitness = 184.69072318
+Seed 27 | Iteration 47/80: best fitness = 184.69072318
+Seed 27 | Iteration 48/80: best fitness = 184.69072318
+Seed 27 | Iteration 49/80: best fitness = 184.69072318
+Seed 27 | Iteration 50/80: best fitness = 184.69072318
+Seed 27 | Iteration 51/80: best fitness = 184.69072318
+Seed 27 | Iteration 52/80: best fitness = 184.69072318
+Seed 27 | Iteration 53/80: best fitness = 184.69072318
+Seed 27 | Iteration 54/80: best fitness = 184.69072318
+Seed 27 | Iteration 55/80: best fitness = 184.69072318
+Seed 27 | Iteration 56/80: best fitness = 184.69072318
+Seed 27 | Iteration 57/80: best fitness = 184.69072318
+Seed 27 | Iteration 58/80: best fitness = 184.69072318
+Seed 27 | Iteration 59/80: best fitness = 184.69072318
+Seed 27 | Iteration 60/80: best fitness = 184.69072318
+Seed 27 | Iteration 61/80: best fitness = 184.69072318
+Seed 27 | Iteration 62/80: best fitness = 184.69072318
+Seed 27 | Iteration 63/80: best fitness = 184.69072318
+Seed 27 | Iteration 64/80: best fitness = 184.69072318
+Seed 27 | Iteration 65/80: best fitness = 184.69072318
+Seed 27 | Iteration 66/80: best fitness = 184.69072318
+Seed 27 | Iteration 67/80: best fitness = 184.69072318
+Seed 27 | Iteration 68/80: best fitness = 184.69072318
+Seed 27 | Iteration 69/80: best fitness = 184.69072318
+Seed 27 | Iteration 70/80: best fitness = 184.69072318
+Seed 27 | Iteration 71/80: best fitness = 184.69072318
+Seed 27 | Iteration 72/80: best fitness = 184.69072318
+Seed 27 | Iteration 73/80: best fitness = 184.69072318
+Seed 27 | Iteration 74/80: best fitness = 184.69072318
+Seed 27 | Iteration 75/80: best fitness = 184.69072318
+Seed 27 | Iteration 76/80: best fitness = 184.69072318
+Seed 27 | Iteration 77/80: best fitness = 184.69072318
+Seed 27 | Iteration 78/80: best fitness = 184.69072318
+Seed 27 | Iteration 79/80: best fitness = 184.69072318
+Seed 27 | Iteration 80/80: best fitness = 184.69072318
+Seed 37 | Iteration 01/80: best fitness = 459.84670395
+Seed 37 | Iteration 02/80: best fitness = 391.10980682
+Seed 37 | Iteration 03/80: best fitness = 294.39030269
+Seed 37 | Iteration 04/80: best fitness = 241.58550834
+Seed 37 | Iteration 05/80: best fitness = 198.37508374
+Seed 37 | Iteration 06/80: best fitness = 188.90310944
+Seed 37 | Iteration 07/80: best fitness = 188.90310944
+Seed 37 | Iteration 08/80: best fitness = 186.18722578
+Seed 37 | Iteration 09/80: best fitness = 186.18722578
+Seed 37 | Iteration 10/80: best fitness = 185.38922426
+Seed 37 | Iteration 11/80: best fitness = 184.29805687
+Seed 37 | Iteration 12/80: best fitness = 184.29805687
+Seed 37 | Iteration 13/80: best fitness = 184.29805687
+Seed 37 | Iteration 14/80: best fitness = 184.29805687
+Seed 37 | Iteration 15/80: best fitness = 184.29805687
+Seed 37 | Iteration 16/80: best fitness = 184.23795207
+Seed 37 | Iteration 17/80: best fitness = 184.23795207
+Seed 37 | Iteration 18/80: best fitness = 184.23795207
+Seed 37 | Iteration 19/80: best fitness = 184.23795207
+Seed 37 | Iteration 20/80: best fitness = 184.23795207
+Seed 37 | Iteration 21/80: best fitness = 184.23795207
+Seed 37 | Iteration 22/80: best fitness = 184.23795207
+Seed 37 | Iteration 23/80: best fitness = 184.23795207
+Seed 37 | Iteration 24/80: best fitness = 184.23795207
+Seed 37 | Iteration 25/80: best fitness = 184.23795207
+Seed 37 | Iteration 26/80: best fitness = 184.23795207
+Seed 37 | Iteration 27/80: best fitness = 184.23795207
+Seed 37 | Iteration 28/80: best fitness = 184.23795207
+Seed 37 | Iteration 29/80: best fitness = 184.23795207
+Seed 37 | Iteration 30/80: best fitness = 184.23795207
+Seed 37 | Iteration 31/80: best fitness = 184.23795207
+Seed 37 | Iteration 32/80: best fitness = 184.23795207
+Seed 37 | Iteration 33/80: best fitness = 184.23795207
+Seed 37 | Iteration 34/80: best fitness = 184.23795207
+Seed 37 | Iteration 35/80: best fitness = 184.23795207
+Seed 37 | Iteration 36/80: best fitness = 184.23795207
+Seed 37 | Iteration 37/80: best fitness = 184.23795207
+Seed 37 | Iteration 38/80: best fitness = 184.23795207
+Seed 37 | Iteration 39/80: best fitness = 184.23795207
+Seed 37 | Iteration 40/80: best fitness = 184.23795207
+Seed 37 | Iteration 41/80: best fitness = 184.23795207
+Seed 37 | Iteration 42/80: best fitness = 184.23795207
+Seed 37 | Iteration 43/80: best fitness = 184.23795207
+Seed 37 | Iteration 44/80: best fitness = 184.23795207
+Seed 37 | Iteration 45/80: best fitness = 184.23795207
+Seed 37 | Iteration 46/80: best fitness = 184.23795207
+Seed 37 | Iteration 47/80: best fitness = 184.23795207
+Seed 37 | Iteration 48/80: best fitness = 184.23795207
+Seed 37 | Iteration 49/80: best fitness = 184.23795207
+Seed 37 | Iteration 50/80: best fitness = 184.23795207
+Seed 37 | Iteration 51/80: best fitness = 184.23795207
+Seed 37 | Iteration 52/80: best fitness = 184.23795207
+Seed 37 | Iteration 53/80: best fitness = 184.23795207
+Seed 37 | Iteration 54/80: best fitness = 184.23795207
+Seed 37 | Iteration 55/80: best fitness = 184.23795207
+Seed 37 | Iteration 56/80: best fitness = 184.23795207
+Seed 37 | Iteration 57/80: best fitness = 184.23795207
+Seed 37 | Iteration 58/80: best fitness = 184.23795207
+Seed 37 | Iteration 59/80: best fitness = 184.23795207
+Seed 37 | Iteration 60/80: best fitness = 184.23795207
+Seed 37 | Iteration 61/80: best fitness = 184.23795207
+Seed 37 | Iteration 62/80: best fitness = 184.23795207
+Seed 37 | Iteration 63/80: best fitness = 184.23795207
+Seed 37 | Iteration 64/80: best fitness = 184.23795207
+Seed 37 | Iteration 65/80: best fitness = 184.23795207
+Seed 37 | Iteration 66/80: best fitness = 184.23795207
+Seed 37 | Iteration 67/80: best fitness = 184.23795207
+Seed 37 | Iteration 68/80: best fitness = 184.23795207
+Seed 37 | Iteration 69/80: best fitness = 184.23795207
+Seed 37 | Iteration 70/80: best fitness = 184.23271408
+Seed 37 | Iteration 71/80: best fitness = 184.23271408
+Seed 37 | Iteration 72/80: best fitness = 184.23271408
+Seed 37 | Iteration 73/80: best fitness = 184.23271408
+Seed 37 | Iteration 74/80: best fitness = 184.23271408
+Seed 37 | Iteration 75/80: best fitness = 184.23271408
+Seed 37 | Iteration 76/80: best fitness = 184.23271408
+Seed 37 | Iteration 77/80: best fitness = 184.23271408
+Seed 37 | Iteration 78/80: best fitness = 184.23271408
+Seed 37 | Iteration 79/80: best fitness = 184.23271408
+Seed 37 | Iteration 80/80: best fitness = 184.23271408
+Seed 47 | Iteration 01/80: best fitness = 506.44589647
+Seed 47 | Iteration 02/80: best fitness = 432.11550852
+Seed 47 | Iteration 03/80: best fitness = 340.37640878
+Seed 47 | Iteration 04/80: best fitness = 188.85542496
+Seed 47 | Iteration 05/80: best fitness = 188.85542496
+Seed 47 | Iteration 06/80: best fitness = 188.85542496
+Seed 47 | Iteration 07/80: best fitness = 184.85400213
+Seed 47 | Iteration 08/80: best fitness = 184.69072318
+Seed 47 | Iteration 09/80: best fitness = 184.69072318
+Seed 47 | Iteration 10/80: best fitness = 184.69072318
+Seed 47 | Iteration 11/80: best fitness = 184.23271408
+Seed 47 | Iteration 12/80: best fitness = 184.23271408
+Seed 47 | Iteration 13/80: best fitness = 184.23271408
+Seed 47 | Iteration 14/80: best fitness = 184.23271408
+Seed 47 | Iteration 15/80: best fitness = 184.23271408
+Seed 47 | Iteration 16/80: best fitness = 184.23271408
+Seed 47 | Iteration 17/80: best fitness = 184.23271408
+Seed 47 | Iteration 18/80: best fitness = 184.23271408
+Seed 47 | Iteration 19/80: best fitness = 184.23271408
+Seed 47 | Iteration 20/80: best fitness = 184.23271408
+Seed 47 | Iteration 21/80: best fitness = 184.23271408
+Seed 47 | Iteration 22/80: best fitness = 184.23271408
+Seed 47 | Iteration 23/80: best fitness = 184.23271408
+Seed 47 | Iteration 24/80: best fitness = 184.23271408
+Seed 47 | Iteration 25/80: best fitness = 184.23271408
+Seed 47 | Iteration 26/80: best fitness = 184.23271408
+Seed 47 | Iteration 27/80: best fitness = 184.23271408
+Seed 47 | Iteration 28/80: best fitness = 184.23271408
+Seed 47 | Iteration 29/80: best fitness = 184.23271408
+Seed 47 | Iteration 30/80: best fitness = 184.23271408
+Seed 47 | Iteration 31/80: best fitness = 184.23271408
+Seed 47 | Iteration 32/80: best fitness = 184.23271408
+Seed 47 | Iteration 33/80: best fitness = 184.23271408
+Seed 47 | Iteration 34/80: best fitness = 184.23271408
+Seed 47 | Iteration 35/80: best fitness = 184.23271408
+Seed 47 | Iteration 36/80: best fitness = 184.23271408
+Seed 47 | Iteration 37/80: best fitness = 184.23271408
+Seed 47 | Iteration 38/80: best fitness = 184.23271408
+Seed 47 | Iteration 39/80: best fitness = 184.23271408
+Seed 47 | Iteration 40/80: best fitness = 184.23271408
+Seed 47 | Iteration 41/80: best fitness = 184.23271408
+Seed 47 | Iteration 42/80: best fitness = 184.23271408
+Seed 47 | Iteration 43/80: best fitness = 184.23271408
+Seed 47 | Iteration 44/80: best fitness = 184.23271408
+Seed 47 | Iteration 45/80: best fitness = 184.23271408
+Seed 47 | Iteration 46/80: best fitness = 184.23271408
+Seed 47 | Iteration 47/80: best fitness = 184.23271408
+Seed 47 | Iteration 48/80: best fitness = 184.23271408
+Seed 47 | Iteration 49/80: best fitness = 184.23271408
+Seed 47 | Iteration 50/80: best fitness = 184.23271408
+Seed 47 | Iteration 51/80: best fitness = 184.23271408
+Seed 47 | Iteration 52/80: best fitness = 184.23271408
+Seed 47 | Iteration 53/80: best fitness = 184.23271408
+Seed 47 | Iteration 54/80: best fitness = 184.23271408
+Seed 47 | Iteration 55/80: best fitness = 184.23271408
+Seed 47 | Iteration 56/80: best fitness = 184.23271408
+Seed 47 | Iteration 57/80: best fitness = 184.23271408
+Seed 47 | Iteration 58/80: best fitness = 184.23271408
+Seed 47 | Iteration 59/80: best fitness = 184.23271408
+Seed 47 | Iteration 60/80: best fitness = 184.23271408
+Seed 47 | Iteration 61/80: best fitness = 184.23271408
+Seed 47 | Iteration 62/80: best fitness = 184.23271408
+Seed 47 | Iteration 63/80: best fitness = 184.23271408
+Seed 47 | Iteration 64/80: best fitness = 184.23271408
+Seed 47 | Iteration 65/80: best fitness = 184.23271408
+Seed 47 | Iteration 66/80: best fitness = 184.23271408
+Seed 47 | Iteration 67/80: best fitness = 184.23271408
+Seed 47 | Iteration 68/80: best fitness = 184.23271408
+Seed 47 | Iteration 69/80: best fitness = 184.23271408
+Seed 47 | Iteration 70/80: best fitness = 184.23271408
+Seed 47 | Iteration 71/80: best fitness = 184.23271408
+Seed 47 | Iteration 72/80: best fitness = 184.23271408
+Seed 47 | Iteration 73/80: best fitness = 184.23271408
+Seed 47 | Iteration 74/80: best fitness = 184.23271408
+Seed 47 | Iteration 75/80: best fitness = 184.23271408
+Seed 47 | Iteration 76/80: best fitness = 184.23271408
+Seed 47 | Iteration 77/80: best fitness = 184.23271408
+Seed 47 | Iteration 78/80: best fitness = 184.23271408
+Seed 47 | Iteration 79/80: best fitness = 184.23271408
+Seed 47 | Iteration 80/80: best fitness = 184.23271408
+
+Best solution across seeds:
+  fitness: 184.23271407961627
+  dg_bus_zero_based: 13
+  dg_bus_number: 14
+  dg_mw: 0.8
+  evcs_bus_zero_based: 1
+  evcs_bus_number: 2
+  evcs_mw: 0.3
+  bess_bus_zero_based: 17
+  bess_bus_number: 18
+  bess_discharge_mw: 0.5
+  active_losses_mw: 0.20663329733881292
+  voltage_deviation_pu2: 0.07941753395857003
+  minimum_vsi: 0.6995302309180571
+  min_voltage_pu: 0.9138552874923309
+  max_voltage_pu: 1.0
+  voltage_violation_sum: 0.18323190544269174
+  line_loading_violation_sum: 0.0
+  placement_constraint_violation: False
+  converged: True
+
+Across-seed statistics:
+                    metric       mean      std
+                   fitness 184.507520 0.250862
+         dg_bus_zero_based  14.800000 1.643168
+             dg_bus_number  15.800000 1.643168
+                     dg_mw   0.800000 0.000000
+       evcs_bus_zero_based   1.000000 0.000000
+           evcs_bus_number   2.000000 0.000000
+                   evcs_mw   0.300000 0.000000
+       bess_bus_zero_based  14.000000 2.738613
+           bess_bus_number  15.000000 2.738613
+         bess_discharge_mw   0.500000 0.000000
+          active_losses_mw   0.207398 0.000699
+     voltage_deviation_pu2   0.079334 0.000076
+               minimum_vsi   0.699482 0.000044
+            min_voltage_pu   0.913839 0.000015
+            max_voltage_pu   1.000000 0.000000
+     voltage_violation_sum   0.183507 0.000251
+line_loading_violation_sum   0.000000 0.000000
+
+Results saved in: C:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED\IEEE-33-Bus-DG-EV-BESS-Optimization-main\ieee33_dg_ev_bess_project\results
+PS C:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED> python ".\IEEE-33-Bus-DG-EV-BESS-Optimization-main\ieee33_dg_ev_bess_project\python\02_resource_scenarios.py"
+                             case  min_voltage_pu  min_voltage_bus  max_voltage_pu  max_voltage_bus  active_losses_mw  voltage_deviation_pu2  minimum_vsi  converged  loss_reduction_vs_uncompensated_percent
+Uncompensated high EV - 100% load        0.889970               18             1.0                1          0.263358               0.155496     0.638496       True                                32.303558
+      Heuristic trial - 100% load        0.926347               33             1.0                1          0.172074               0.085287     0.738154       True                                55.768054
+        PSO optimized - 100% load        0.932291               33             1.0                1          0.137039               0.043113     0.757259       True                                64.773992
+Uncompensated high EV - 120% load        0.865204               18             1.0                1          0.389027               0.232021     0.573036       True                                 0.000000
+      Heuristic trial - 120% load        0.907480               33             1.0                1          0.266198               0.139576     0.680241       True                                31.573504
+        PSO optimized - 120% load        0.913855               33             1.0                1          0.206633               0.079418     0.699530       True                                46.884651
+Uncompensated high EV - 130% load        0.852319               18             1.0                1          0.463676               0.277712     0.541053       True                               -19.188463
+      Heuristic trial - 130% load        0.897750               33             1.0                1          0.323207               0.172827     0.651745       True                                16.919263
+        PSO optimized - 130% load        0.904366               33             1.0                1          0.250238               0.102817     0.671139       True                                35.676086
+       Modified-network base load        0.891390               18             1.0                1          0.244374               0.149698     0.642544       True                                37.183339
+         Low renewable generation        0.903010               18             1.0                1          0.203496               0.122257     0.673409       True                                47.691007
+
+24-hour QSTS results (first rows):
+ hour  pv_bus_number  evcs_bus_number  bess_bus_number  pv_output_mw  evcs_demand_mw  bess_charge_mw  bess_discharge_mw  bess_soc_start_pu  bess_soc_end_pu  bess_soc_pu  min_voltage_pu  min_voltage_bus  active_losses_mw  minimum_vsi  line_max_loading_percent
+    0             14                2               18           0.0           0.030             0.0                0.0                0.5              0.5          0.5        0.891368               18          0.244544     0.642483                  0.000249
+    1             14                2               18           0.0           0.024             0.0                0.0                0.5              0.5          0.5        0.891373               18          0.244510     0.642495                  0.000248
+    2             14                2               18           0.0           0.021             0.0                0.0                0.5              0.5          0.5        0.891375               18          0.244493     0.642501                  0.000248
+    3             14                2               18           0.0           0.018             0.0                0.0                0.5              0.5          0.5        0.891377               18          0.244476     0.642507                  0.000248
+    4             14                2               18           0.0           0.018             0.0                0.0                0.5              0.5          0.5        0.891377               18          0.244476     0.642507                  0.000248
+
+PSO placement used: {"dg_bus": 13, "dg_mw": 0.8, "ev_bus": 1, "bess_bus": 17, "bess_mw": 0.5}
+Results saved in: C:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED\IEEE-33-Bus-DG-EV-BESS-Optimization-main\ieee33_dg_ev_bess_project\results
+PS C:\Users\Likhitha R\Downloads\IEEE-33-Bus-DG-EV-BESS-Optimization-UPDATED> 
